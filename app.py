@@ -19,6 +19,10 @@ except Exception as e:
 
 db = client.raincastdb
 
+@app.route("/")
+def home():
+    return "Welcome to Raincast ID"
+
 @app.route('/predictModel', methods=["POST"])
 def PredictWithModel():
     hasil = 80

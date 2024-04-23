@@ -1,7 +1,9 @@
 import numpy as np
 from flask import Flask, jsonify, request
-from keras import models
 from pymongo import MongoClient
+import os
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+import tensorflow as tf
 
 app = Flask(__name__)
 
@@ -40,7 +42,7 @@ def PredictWithModelAPI():
 
     input = np.array(listInput)
 
-    model = models.load_model('static/predict-model/PCH-model5.keras')
+    model = tf.keras.models.load_model('static/predict-model/PCH-model5.keras')
 
     output = model.predict(input)
 

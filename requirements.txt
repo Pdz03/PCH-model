@@ -1,3 +1,3 @@
 ﻿Flask
-tensorflow-cpu==2.15.0
 pymongo
+tensorflow==2.10.0
